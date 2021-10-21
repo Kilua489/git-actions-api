@@ -9,7 +9,9 @@ jobs:
 
   update-repo:
     runs-on: ubuntu-latest
-
+    env:
+      BACK_END_TRIGGER: ${{ secrets.BACK_END_TRIGGER }}
+      CLIENT_TRIGGER: ${{ secrets.CLIENT_TRIGGER }}
     steps:
       - name: pr Title
         run: echo "${{ github.event.pull_request.title }}"
