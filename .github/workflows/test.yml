@@ -12,11 +12,11 @@ jobs:
     env:
       BACK_END_TRIGGER: ${{ secrets.BACK_END_TRIGGER }}
       CLIENT_TRIGGER: ${{ secrets.CLIENT_TRIGGER }}
-      
+
     steps:
       - name: pr Title
         run: echo "${{ github.event.pull_request.title }}"
       - name: Title BACK
-        run: echo "${{ env.BACK_END_TRIGGER }}"
-      - name: Title CLIENT
-        run: echo "${{ env.CLIENT_TRIGGER }}"
+        run: echo "${{ secrets.BACK_END_TRIGGER }}"
+      - name: Title `WEB
+        run: echo "${{ secrets.WEB_TRIGGER }}"
