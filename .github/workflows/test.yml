@@ -9,20 +9,14 @@ jobs:
 
   update-back:
     runs-on: ubuntu-latest
-    env:
-      BACK_END_TRIGGER: ${{ secrets.BACK_END_TRIGGER }}
-      WEB_TRIGGER: ${{ secrets.WEB_TRIGGER }}
-    if: ${{ startsWith( github.event.pull_request.title , env.BACK_END_TRIGGER ) }}
+    if: ${{ startsWith( github.event.pull_request.title , secrets.BACK_END_TRIGGER ) }}
     steps:
       - name: Title BACK
         run: echo "BACK PR"
 
   update-web:
     runs-on: ubuntu-latest
-    env:
-      BACK_END_TRIGGER: ${{ secrets.BACK_END_TRIGGER }}
-      WEB_TRIGGER: ${{ secrets.WEB_TRIGGER }}
-    if: ${{ startsWith( github.event.pull_request.title , env.BACK_END_TRIGGER ) }}
+    if: ${{ startsWith( github.event.pull_request.title , secrets.BACK_END_TRIGGER ) }}
     steps:
       - name: Title WEB
         if: ${{ startsWith( github.event.pull_request.title , env.WEB_TRIGGER ) }}
