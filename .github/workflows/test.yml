@@ -11,5 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Title name
+      - name: pr Title
         run: echo "${{ github.event.pull_request.title }}"
+      - name: Title BACK
+        run: echo "${{ env.BACK_END_TRIGGER }}"
+      - name: Title CLIENT
+        run: echo "${{ env.CLIENT_TRIGGER }}"
