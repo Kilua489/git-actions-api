@@ -16,7 +16,7 @@ jobs:
 
   update-web:
     runs-on: ubuntu-latest
-    if: ${{ startsWith( github.event.pull_request.title , secrets.BACK_END_TRIGGER ) }}
+    if: ${{ startsWith( github.event.pull_request.title , secrets.WEB_TRIGGER ) }}
     steps:
       - name: Title WEB
         run: echo "WEB PR"
