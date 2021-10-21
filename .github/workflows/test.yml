@@ -1,0 +1,15 @@
+name: vps-deploy
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [ master ]
+
+jobs:
+
+  update-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Title name
+        run: echo "${{ github.event.pull_request.title }}"
