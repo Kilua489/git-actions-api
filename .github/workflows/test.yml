@@ -19,5 +19,4 @@ jobs:
     if: ${{ startsWith( github.event.pull_request.title , secrets.BACK_END_TRIGGER ) }}
     steps:
       - name: Title WEB
-        if: ${{ startsWith( github.event.pull_request.title , env.WEB_TRIGGER ) }}
         run: echo "WEB PR"
